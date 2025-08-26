@@ -2,70 +2,54 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ * 
+ * Custom Corne keymap based on Neo layout with German locale support
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "keys_de.h"
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        display-name = "Base";
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Lower";
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+    default_layer {
+      display-name = "Base";
+      // L1 — per your sketch (NEO-like)
+      bindings = <
+        /* row 1 */ &trans  &kp DE_X        &kp DE_V        &kp DE_L        &kp DE_C        &kp DE_W                   &kp DE_K &kp DE_H       &kp DE_G       &kp DE_F      &kp DE_Q       &DE_SZ
+        /* row 2 */ &trans  &mt LGUI DE_U   &mt LALT DE_I   &mt LSHFT DE_A  &mt LCTRL DE_E  &kp DE_O                   &kp DE_S &mt RCTRL DE_N &mt RSHFT DE_R &mt RALT DE_T &mt RGUI DE_D  &kp DE_Z
+        /* row 3 */ &trans  &kp DE_U_UMLAUT &kp DE_O_UMLAUT &kp DE_A_UMLAUT &kp DE_P        &kp DE_Y                   &kp DE_B &kp DE_M       &kp DE_COMMA   &kp DE_DOT    &kp DE_J       &kp DE_BSLH
+        /* thumbs */                                                        &mo 1           &mo 2    &kp SPACE &kp RET &mo 2    &mo 1
+      >;
+    };
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Raise";
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+    lower_layer {
+      display-name = "Nav+Num";
+      // L2 — left: navigation, right: numpad (0 on right inner thumb)
+      bindings = <
+        /* row 1 */  &trans   &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN     &kp END                        &trans     &kp DE_N7       &kp DE_N8       &kp DE_N9       &trans       &trans
+        /* row 2 */  &trans   &kp LC(LEFT) &kp LEFT     &kp DOWN     &kp RIGHT     &kp LC(RIGHT)                  &trans     &kp DE_N4       &kp DE_N5       &kp DE_N6       &trans       &trans
+        /* row 3 */  &trans   &kp ESC      &kp TAB      &trans       &kp RET       &kp LGUI                       &trans     &kp DE_N1       &kp DE_N2       &kp DE_N3       &trans       &trans
+        /* thumbs */                                                 &trans        &trans        &trans &trans    &trans     &kp DE_N0
+      >;
+    };
 
-                extra_1 {
-                        status = "reserved";
-                };
+    raise_layer {
+      display-name = "Symbols";
+      // L3 — symbol blocks per sketch
+      bindings = <
+        /* row 1 */  &trans &trans       &kp DE_MINUS  &kp DE_LBKT   &kp DE_RBKT      &kp DE_CARET                  &kp DE_EXCL   &kp DE_LT       &kp DE_GT       &kp DE_EQUAL    &kp DE_AMPS     &trans
+        /* row 2 */  &trans &kp DE_BSLH   &kp DE_FSLH  &kp DE_LBRC   &kp DE_RBRC      &kp DE_STAR                   &kp DE_QMARK  &kp DE_LPAR     &kp DE_RPAR     &kp DE_MINUS    &kp DE_COLON    &kp DE_AT
+        /* row 3 */  &trans &kp DE_HASH   &kp DE_DLLR  &kp DE_PIPE   &kp DE_TILDE     &kp DE_GRAVE                  &kp DE_PLUS   &kp DE_PRCNT    &kp DE_DQT      &kp DE_SQT      &trans          &trans
+        /* thumbs */                                                 &trans           &trans       &trans  &trans   &trans        &trans
+      >;
+    };
 
-                extra_2 {
-                        status = "reserved";
-                };
-
-                extra_3 {
-                        status = "reserved";
-                };
-        };
+    extra_1 { status = "reserved"; };
+    extra_2 { status = "reserved"; };
+    extra_3 { status = "reserved"; };
+  };
 };
