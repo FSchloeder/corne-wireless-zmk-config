@@ -19,7 +19,7 @@
       display-name = "Base";
       // L1 — per your sketch (NEO-like)
       bindings = <
-        /* row 1 */ &trans  &kp DE_X        &kp DE_V        &kp DE_L        &kp DE_C        &kp DE_W                   &kp DE_K &kp DE_H       &kp DE_G       &kp DE_F      &kp DE_Q       &DE_SZ
+        /* row 1 */ &trans  &kp DE_X        &kp DE_V        &kp DE_L        &kp DE_C        &kp DE_W                   &kp DE_K &kp DE_H       &kp DE_G       &kp DE_F      &kp DE_Q       &kp DE_SZ
         /* row 2 */ &trans  &mt LGUI DE_U   &mt LALT DE_I   &mt LSHFT DE_A  &mt LCTRL DE_E  &kp DE_O                   &kp DE_S &mt RCTRL DE_N &mt RSHFT DE_R &mt RALT DE_T &mt RGUI DE_D  &kp DE_Z
         /* row 3 */ &trans  &kp DE_U_UMLAUT &kp DE_O_UMLAUT &kp DE_A_UMLAUT &kp DE_P        &kp DE_Y                   &kp DE_B &kp DE_M       &kp DE_COMMA   &kp DE_DOT    &kp DE_J       &kp DE_BSLH
         /* thumbs */                                                        &mo 1           &mo 2    &kp SPACE &kp RET &mo 2    &mo 1
