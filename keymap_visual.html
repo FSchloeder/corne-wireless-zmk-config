@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corne Keyboard Layout - Neo-based with German Support</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .layer {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .layer-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        .keyboard {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .hand {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .row {
+            display: flex;
+            gap: 5px;
+        }
+        .key {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.2s;
+        }
+        .key:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: #f0f0f0;
+        }
+        .key.mod {
+            background: #e8f4fd;
+            border-color: #2196F3;
+        }
+        .key.layer {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        .key.special {
+            background: #f3e5f5;
+            border-color: #9c27b0;
+        }
+        .key.trans {
+            background: #f5f5f5;
+            border-color: #ccc;
+            color: #999;
+        }
+        .key.thumb {
+            width: 70px;
+        }
+        .thumb-row {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        .key-label {
+            font-size: 11px;
+            color: #666;
+            position: absolute;
+            top: 2px;
+            left: 4px;
+        }
+        .key-main {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-key {
+            width: 30px;
+            height: 30px;
+            border: 2px solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Corne Keyboard Layout</h1>
+        <div class="subtitle">Neo-based layout with German locale support (DE_ keycodes)</div>
+
+        <!-- Layer 0: Base -->
+        <div class="layer">
+            <div class="layer-title">Layer 0: Base (Neo Layout)</div>
+            <div class="keyboard">
+                <!-- Left Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key"><div class="key-main">X</div></div>
+                        <div class="key"><div class="key-main">V</div></div>
+                        <div class="key"><div class="key-main">L</div></div>
+                        <div class="key"><div class="key-main">C</div></div>
+                        <div class="key"><div class="key-main">W</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key mod"><div class="key-label">CTRL</div><div class="key-main">U</div></div>
+                        <div class="key mod"><div class="key-label">ALT</div><div class="key-main">I</div></div>
+                        <div class="key mod"><div class="key-label">GUI</div><div class="key-main">A</div></div>
+                        <div class="key mod"><div class="key-label">SHFT</div><div class="key-main">E</div></div>
+                        <div class="key"><div class="key-main">O</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">[</div></div>
+                        <div class="key"><div class="key-main">]</div></div>
+                        <div class="key"><div class="key-main">'</div></div>
+                        <div class="key"><div class="key-main">P</div></div>
+                        <div class="key"><div class="key-main">Y</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb"><div class="key-main">GUI</div></div>
+                        <div class="key thumb layer"><div class="key-main">L1</div></div>
+                        <div class="key thumb"><div class="key-main">SPC</div></div>
+                    </div>
+                </div>
+
+                <!-- Right Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key"><div class="key-main">K</div></div>
+                        <div class="key"><div class="key-main">H</div></div>
+                        <div class="key"><div class="key-main">G</div></div>
+                        <div class="key"><div class="key-main">F</div></div>
+                        <div class="key"><div class="key-main">Q</div></div>
+                        <div class="key"><div class="key-main">Y</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key mod"><div class="key-label">SHFT</div><div class="key-main">S</div></div>
+                        <div class="key mod"><div class="key-label">GUI</div><div class="key-main">N</div></div>
+                        <div class="key mod"><div class="key-label">ALT</div><div class="key-main">R</div></div>
+                        <div class="key mod"><div class="key-label">CTRL</div><div class="key-main">T</div></div>
+                        <div class="key"><div class="key-main">D</div></div>
+                        <div class="key"><div class="key-main">Z</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">B</div></div>
+                        <div class="key"><div class="key-main">M</div></div>
+                        <div class="key"><div class="key-main">,</div></div>
+                        <div class="key"><div class="key-main">.</div></div>
+                        <div class="key"><div class="key-main">J</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb"><div class="key-main">RET</div></div>
+                        <div class="key thumb layer"><div class="key-main">L2</div></div>
+                        <div class="key thumb"><div class="key-main">BSPC</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer 1: Navigation + Numbers -->
+        <div class="layer">
+            <div class="layer-title">Layer 1: Navigation + Numbers</div>
+            <div class="keyboard">
+                <!-- Left Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key special"><div class="key-main">HOME</div></div>
+                        <div class="key special"><div class="key-main">PG↑</div></div>
+                        <div class="key special"><div class="key-main">↑</div></div>
+                        <div class="key special"><div class="key-main">PG↓</div></div>
+                        <div class="key special"><div class="key-main">END</div></div>
+                        <div class="key special"><div class="key-main">INS</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key special"><div class="key-main">C+←</div></div>
+                        <div class="key special"><div class="key-main">←</div></div>
+                        <div class="key special"><div class="key-main">↓</div></div>
+                        <div class="key special"><div class="key-main">→</div></div>
+                        <div class="key special"><div class="key-main">C+→</div></div>
+                        <div class="key special"><div class="key-main">DEL</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key special"><div class="key-main">ESC</div></div>
+                        <div class="key special"><div class="key-main">TAB</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb layer"><div class="key-main">HELD</div></div>
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                    </div>
+                </div>
+
+                <!-- Right Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key"><div class="key-main">7</div></div>
+                        <div class="key"><div class="key-main">8</div></div>
+                        <div class="key"><div class="key-main">9</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key"><div class="key-main">4</div></div>
+                        <div class="key"><div class="key-main">5</div></div>
+                        <div class="key"><div class="key-main">6</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key"><div class="key-main">1</div></div>
+                        <div class="key"><div class="key-main">2</div></div>
+                        <div class="key"><div class="key-main">3</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb"><div class="key-main">0</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer 2: Symbols -->
+        <div class="layer">
+            <div class="layer-title">Layer 2: Symbols</div>
+            <div class="keyboard">
+                <!-- Left Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key"><div class="key-main">-</div></div>
+                        <div class="key"><div class="key-main">[</div></div>
+                        <div class="key"><div class="key-main">]</div></div>
+                        <div class="key"><div class="key-main">^</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">\</div></div>
+                        <div class="key"><div class="key-main">/</div></div>
+                        <div class="key"><div class="key-main">{</div></div>
+                        <div class="key"><div class="key-main">}</div></div>
+                        <div class="key"><div class="key-main">*</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">#</div></div>
+                        <div class="key"><div class="key-main">$</div></div>
+                        <div class="key"><div class="key-main">|</div></div>
+                        <div class="key"><div class="key-main">~</div></div>
+                        <div class="key"><div class="key-main">'</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                    </div>
+                </div>
+
+                <!-- Right Hand -->
+                <div class="hand">
+                    <div class="row">
+                        <div class="key"><div class="key-main">!</div></div>
+                        <div class="key"><div class="key-main">&lt;</div></div>
+                        <div class="key"><div class="key-main">&gt;</div></div>
+                        <div class="key"><div class="key-main">=</div></div>
+                        <div class="key"><div class="key-main">&amp;</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">?</div></div>
+                        <div class="key"><div class="key-main">(</div></div>
+                        <div class="key"><div class="key-main">)</div></div>
+                        <div class="key"><div class="key-main">-</div></div>
+                        <div class="key"><div class="key-main">:</div></div>
+                        <div class="key"><div class="key-main">@</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="key"><div class="key-main">+</div></div>
+                        <div class="key"><div class="key-main">%</div></div>
+                        <div class="key"><div class="key-main">"</div></div>
+                        <div class="key"><div class="key-main">'</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                        <div class="key trans"><div class="key-main">—</div></div>
+                    </div>
+                    <div class="thumb-row">
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                        <div class="key thumb layer"><div class="key-main">HELD</div></div>
+                        <div class="key thumb trans"><div class="key-main">—</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-key" style="background: #e8f4fd; border-color: #2196F3;"></div>
+                <span>Mod-Tap (Hold for modifier)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-key" style="background: #fff3e0; border-color: #ff9800;"></div>
+                <span>Layer Switch</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-key" style="background: #f3e5f5; border-color: #9c27b0;"></div>
+                <span>Navigation/Special</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-key" style="background: #f5f5f5; border-color: #ccc;"></div>
+                <span>Transparent (—)</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f7ff; border-radius: 10px;">
+            <h3 style="color: #1976d2;">Notes:</h3>
+            <ul>
+                <li>This layout uses German locale keycodes (DE_ prefix) for proper QWERTZ mapping</li>
+                <li>Layer 0: Neo-based letter layout with home row modifiers</li>
+                <li>Layer 1: Navigation on left, numpad on right</li>
+                <li>Layer 2: Symbols and special characters</li>
+                <li>Mod-tap keys: tap for letter, hold for modifier (Ctrl/Alt/GUI/Shift)</li>
+                <li>Based on your sketch at sketch_of_intended_layout.jpg</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,9 +19,9 @@
       display-name = "Base";
       // L1 — per your sketch (NEO-like)
       bindings = <
-        /* row 1 */ &trans  &kp DE_X        &kp DE_V        &kp DE_L        &kp DE_C        &kp DE_W                   &kp DE_K &kp DE_H       &kp DE_G       &kp DE_F      &kp DE_Q       &kp DE_SZ
-        /* row 2 */ &trans  &mt LGUI DE_U   &mt LALT DE_I   &mt LSHFT DE_A  &mt LCTRL DE_E  &kp DE_O                   &kp DE_S &mt RCTRL DE_N &mt RSHFT DE_R &mt RALT DE_T &mt RGUI DE_D  &kp DE_Z
-        /* row 3 */ &trans  &kp DE_U_UMLAUT &kp DE_O_UMLAUT &kp DE_A_UMLAUT &kp DE_P        &kp DE_Y                   &kp DE_B &kp DE_M       &kp DE_COMMA   &kp DE_DOT    &kp DE_J       &kp DE_BSLH
+        /* row 1 */ &kp TAB  &kp DE_X        &kp DE_V        &kp DE_L        &kp DE_C        &kp DE_W                   &kp DE_K &kp DE_H       &kp DE_G       &kp DE_F      &kp DE_Q       &kp DE_SZ
+        /* row 2 */ &trans  &mt LGUI DE_U   &mt LALT DE_I   &mt LSHFT DE_A  &mt LCTRL DE_E  &kp DE_O                   &kp DE_S &mt RCTRL DE_N &mt RSHFT DE_R &mt RALT DE_T &mt RGUI DE_D  &kp DE_Y
+        /* row 3 */ &trans  &kp DE_U_UMLAUT &kp DE_O_UMLAUT &kp DE_A_UMLAUT &kp DE_P        &kp DE_Z                   &kp DE_B &kp DE_M       &kp DE_COMMA   &kp DE_DOT    &kp DE_J       &kp DE_BSLH
         /* thumbs */                                                        &mo 1           &mo 2    &kp SPACE &kp RET &mo 2    &mo 1
       >;
     };
@@ -30,10 +30,10 @@
       display-name = "Nav+Num";
       // L2 — left: navigation, right: numpad (0 on right inner thumb)
       bindings = <
-        /* row 1 */  &trans   &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN     &kp END                        &trans     &kp DE_N7       &kp DE_N8       &kp DE_N9       &trans       &trans
+        /* row 1 */  &trans   &kp HOME     &kp BCSP    &kp UP       &kp DEL     &kp END                        &trans     &kp DE_N7       &kp DE_N8       &kp DE_N9       &trans       &trans
         /* row 2 */  &trans   &kp LC(LEFT) &kp LEFT     &kp DOWN     &kp RIGHT     &kp LC(RIGHT)                  &trans     &kp DE_N4       &kp DE_N5       &kp DE_N6       &trans       &trans
         /* row 3 */  &trans   &kp ESC      &kp TAB      &trans       &kp RET       &kp LGUI                       &trans     &kp DE_N1       &kp DE_N2       &kp DE_N3       &trans       &trans
-        /* thumbs */                                                 &trans        &trans        &trans &trans    &trans     &kp DE_N0
+        /* thumbs */                                                 &trans        &trans        &trans &kp DE_N0    &trans     &kp DE_N0
       >;
     };
 
@@ -41,9 +41,9 @@
       display-name = "Symbols";
       // L3 — symbol blocks per sketch
       bindings = <
-        /* row 1 */  &trans &trans       &kp DE_MINUS  &kp DE_LBKT   &kp DE_RBKT      &kp DE_CARET                  &kp DE_EXCL   &kp DE_LT       &kp DE_GT       &kp DE_EQUAL    &kp DE_AMPS     &trans
+        /* row 1 */  &trans &trans       &kp DE_UNDER  &kp DE_LBKT   &kp DE_RBKT      &kp DE_CARET                  &kp DE_EXCL   &kp DE_LT       &kp DE_GT       &kp DE_EQUAL    &kp DE_AMPS     &trans
         /* row 2 */  &trans &kp DE_BSLH   &kp DE_FSLH  &kp DE_LBRC   &kp DE_RBRC      &kp DE_STAR                   &kp DE_QMARK  &kp DE_LPAR     &kp DE_RPAR     &kp DE_MINUS    &kp DE_COLON    &kp DE_AT
-        /* row 3 */  &trans &kp DE_HASH   &kp DE_DLLR  &kp DE_PIPE   &kp DE_TILDE     &kp DE_GRAVE                  &kp DE_PLUS   &kp DE_PRCNT    &kp DE_DQT      &kp DE_SQT      &trans          &trans
+        /* row 3 */  &trans &kp DE_HASH   &kp DE_DLLR  &kp DE_PIPE   &kp DE_TILDE     &kp DE_GRAVE                  &kp DE_PLUS   &kp DE_PRCNT    &kp DE_DQT      &kp DE_SQT      &kp DE_SEMI         &trans
         /* thumbs */                                                 &trans           &trans       &trans  &trans   &trans        &trans
       >;
     };

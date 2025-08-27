@@ -1,0 +1,42 @@
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      display-name = "Base";
+      // L1 — per your sketch (NEO-like)
+      bindings = <
+        /* row 1 */  &kp X      &kp V        &kp L        &kp C        &kp W        &trans        &kp K      &kp H        &kp G        &kp F        &kp Q        &kp Y
+        /* row 2 */  &mt LCTL U &mt LALT I   &mt LGUI A   &mt LSHFT E  &kp O        &trans        &mt RSHFT S &mt RGUI N   &mt RALT R   &mt RCTL T   &kp D        &kp Y
+        /* row 3 */  &kp LBKT   &kp RBKT     &kp SQT      &kp P        &kp Z        &trans        &kp B      &kp M        &kp COMMA    &kp DOT      &kp J        &trans
+        /* thumbs */ &kp LGUI   &mo 1        &kp SPACE                  &kp RET      &mo 2         &kp BSPC
+      >;
+    };
+
+    lower_layer {
+      display-name = "Nav+Num";
+      // L2 — left: navigation, right: numpad (0 on right inner thumb)
+      bindings = <
+        /* row 1 */  &kp HOME   &kp PG_UP    &kp UP       &kp PG_DN     &kp END      &kp INS       &trans     &kp N7       &kp N8       &kp N9       &trans       &trans
+        /* row 2 */  &kp LC(LEFT) &kp LEFT   &kp DOWN     &kp RIGHT     &kp LC(RIGHT) &kp DEL       &trans     &kp N4       &kp N5       &kp N6       &trans       &trans
+        /* row 3 */  &kp ESC    &kp TAB      &trans       &trans        &trans        &trans        &trans     &kp N1       &kp N2       &kp N3       &trans       &trans
+        /* thumbs */ &trans     &trans       &trans                      &trans       &trans        &kp N0
+      >;
+    };
+
+    raise_layer {
+      display-name = "Symbols";
+      // L3 — symbol blocks per sketch
+      bindings = <
+        /* row 1 */  &kp MINUS  &kp LBKT     &kp RBKT     &kp CARET     &trans       &trans        &kp EXCL   &kp LT       &kp GT       &kp EQUAL    &kp AMPS     &trans
+        /* row 2 */  &kp BSLH   &kp FSLH     &kp LBRC     &kp RBRC      &kp KP_MULTIPLY &trans      &kp QMARK  &kp LPAR     &kp RPAR     &kp MINUS    &kp COLON    &kp AT
+        /* row 3 */  &kp HASH   &kp DLLR     &kp PIPE     &kp TILDE     &kp SQT      &trans        &kp PLUS   &kp PRCNT    &kp DQT      &kp SQT      &trans       &trans
+        /* thumbs */ &trans     &trans       &trans                      &trans       &trans        &trans
+      >;
+    };
+
+    extra_1 { status = "reserved"; };
+    extra_2 { status = "reserved"; };
+    extra_3 { status = "reserved"; };
+  };
+};
