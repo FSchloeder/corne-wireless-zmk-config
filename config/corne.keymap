@@ -30,7 +30,7 @@
       display-name = "Nav+Num";
       // L2 — left: navigation, right: numpad (0 on right inner thumb)
       bindings = <
-        /* row 1 */  &trans   &kp HOME     &kp BCSP    &kp UP       &kp DEL     &kp END                        &trans     &kp DE_N7       &kp DE_N8       &kp DE_N9       &trans       &trans
+        /* row 1 */  &trans   &kp HOME     &kp BSPC    &kp UP       &kp DEL     &kp END                        &trans     &kp DE_N7       &kp DE_N8       &kp DE_N9       &trans       &trans
         /* row 2 */  &trans   &kp LC(LEFT) &kp LEFT     &kp DOWN     &kp RIGHT     &kp LC(RIGHT)                  &trans     &kp DE_N4       &kp DE_N5       &kp DE_N6       &trans       &trans
         /* row 3 */  &trans   &kp ESC      &kp TAB      &trans       &kp RET       &kp LGUI                       &trans     &kp DE_N1       &kp DE_N2       &kp DE_N3       &trans       &trans
         /* thumbs */                                                 &trans        &trans        &trans &kp DE_N0    &trans     &kp DE_N0
